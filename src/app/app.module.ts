@@ -10,6 +10,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material';
+import { MatRadioModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -31,12 +34,13 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 
-import {DishService} from './services/dish.service';
-import {PromotionService} from './services/promotion.service';
+import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { FeedbackService } from './services/feedback.service';
 
 import { baseURL } from './shared/baseurl';
 import { HighlightDirective } from './directives/highlight.directive';
@@ -56,6 +60,7 @@ import { HighlightDirective } from './directives/highlight.directive';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
@@ -63,10 +68,13 @@ import { HighlightDirective } from './directives/highlight.directive';
     AppRoutingModule,
     HttpClientModule,
     MatToolbarModule,
+    MatRadioModule,
+    MatIconModule,
     MatListModule,
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
+    MatDatepickerModule,
     MatDialogModule,
     MatFormFieldModule, 
     MatInputModule,
@@ -74,14 +82,14 @@ import { HighlightDirective } from './directives/highlight.directive';
     MatSelectModule,
     MatSlideToggleModule,
     MatSliderModule,
-    MatProgressSpinnerModule,
-    HttpModule 
+    MatProgressSpinnerModule
   ],
   providers: [
     DishService,
     PromotionService,
     LeaderService,
     ProcessHTTPMsgService,
+    FeedbackService,
     { provide: 'BaseURL', useValue: baseURL }
   ],
   entryComponents: [
